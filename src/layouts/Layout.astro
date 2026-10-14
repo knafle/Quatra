@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = `${siteConfig.brandName} | Software a Medida para Logística PyME`,
-  description = "Consultoría de procesos y herramientas a medida para logística. Vamos a tu depósito, analizamos tus procesos y creamos software que se adapta a tu operación."
+  title = `${siteConfig.brandName} | Consultoría de Rendimiento Operativo para Logística PyME`,
+  description = "Consultoría de rendimiento y optimización de procesos en depósito y muelle. Vamos a tu planta, auditamos tus procesos in-situ y construimos herramientas a medida para recuperar horas-hombre."
 } = Astro.props;
 ---
 
@@ -28,6 +28,7 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content={siteConfig.brandName} />
+    <meta property="og:image" content={url('quatra-badge-hd.png')} />
 
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

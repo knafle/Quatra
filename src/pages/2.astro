@@ -1,8 +1,7 @@
 ---
-const b = import.meta.env.BASE_URL;
 import Layout from '../layouts/Layout.astro';
 import VersionSwitcher from '../components/VersionSwitcher.astro';
-import { siteConfig } from '../data/siteConfig';
+import { siteConfig, url } from '../data/siteConfig';
 
 const pillars = [
   { code: "MOD-01", title: "Auditoría en Muelle", desc: "Relevamos in-situ cómo se mueven los bultos, remitos y choferes para cazar los cuellos de botella invisibles." },
@@ -12,30 +11,30 @@ const pillars = [
 ];
 ---
 
-<Layout title="Quatra — Industrial Tech | Optimización Operativa para PyMEs">
+<Layout title="Quatra — Industrial Tech | Consultoría de Rendimiento Operativo">
   <VersionSwitcher currentVersion="2" />
 
   <div class="bg-[#0B0F19] text-gray-100 min-h-screen selection:bg-amber-500 selection:text-black font-sans">
     <!-- Header Industrial -->
     <header class="border-b border-gray-800 bg-[#0B0F19]/90 backdrop-blur-md sticky top-0 z-40 pt-10 sm:pt-14 pb-4">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-        <a href={`${b}2`} class="flex items-center gap-3 group">
+        <a href={url("2")} class="flex items-center gap-3 group">
           <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center p-2 group-hover:border-amber-400 transition-colors">
-            <img src={`${b}quatra-knot-white.png`} alt="Quatra Logo" class="w-full h-full object-contain filter group-hover:rotate-45 transition-transform duration-500" />
+            <img src={url("quatra-knot-white.svg")} alt="Quatra Logo" class="w-full h-full object-contain filter group-hover:rotate-45 transition-transform duration-500" />
           </div>
           <div>
             <div class="flex items-center gap-2">
               <span class="text-xl font-black tracking-wider text-white uppercase">Quatra</span>
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold">OPS // TECH</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold">OPS // RENDIMIENTO</span>
             </div>
-            <span class="text-[10px] text-gray-500 block font-mono">INGENIERÍA LOGÍSTICA & SOFTWARE</span>
+            <span class="text-[10px] text-gray-400 block font-mono">CONSULTORÍA OPERATIVA & TOOLS A MEDIDA</span>
           </div>
         </a>
 
         <div class="hidden md:flex items-center gap-6 text-xs font-mono text-gray-400 uppercase">
           <a href="#pilares" class="hover:text-amber-400 transition-colors">01. Pilares</a>
           <a href="#calculadora" class="hover:text-amber-400 transition-colors">02. Simulador ROI</a>
-          <a href="#soluciones" class="hover:text-amber-400 transition-colors">03. Herramientas</a>
+          <a href={url("logo")} class="text-gray-500 hover:text-amber-400 transition-colors">03. Brand Kit</a>
         </div>
 
         <a
@@ -57,20 +56,20 @@ const pillars = [
         <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none"></div>
 
         <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 text-center">
-          <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-md bg-gray-900 border border-gray-700 text-amber-400 text-xs font-mono uppercase mb-8 shadow-inner">
+          <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-md bg-gray-900 border border-gray-700 text-amber-400 text-xs font-mono uppercase mb-8 shadow-inner">
             <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-            <span>Muelle & Transporte // Software Satélite de Alta Productividad</span>
+            <span>Muelle & Depósito // No somos una empresa de software</span>
           </div>
 
           <h1 class="text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tight uppercase leading-[1.05]">
-            Optimización y software <br />
+            Rendimiento operativo in-situ: <br />
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500">
-              a la medida de tu muelle de carga
+              Las tools se adaptan a tu operación
             </span>
           </h1>
 
           <p class="mt-8 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Eliminamos el re-tipeo manual, el papel en el depósito y las planillas colgadas. Auditamos in-situ tu operación y desarrollamos programas a medida que calzan exactamente con cómo trabaja tu equipo.
+            <strong class="text-white">No somos una empresa de software ni vendemos licencias.</strong> Somos consultores de rendimiento operativo: nos metemos en tu depósito y muelle de carga, auditamos tiempos muertos en persona y construimos programas satélite a medida para recuperar cientos de horas-hombre al mes.
           </p>
 
           <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -247,6 +246,20 @@ const pillars = [
         </div>
       </section>
     </main>
+
+    <!-- Footer Industrial -->
+    <footer class="py-12 border-t border-gray-800 text-xs text-gray-500 font-mono bg-[#090C14]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2.5">
+          <img src={url("quatra-badge.svg")} alt="Quatra" class="w-5 h-5 rounded-md" />
+          <span class="text-gray-400">© {new Date().getFullYear()} Quatra. Consultoría de Rendimiento Operativo.</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href={url("logo")} class="text-amber-400 hover:underline">Brand Kit & Logos Vectoriales →</a>
+          <span>Buenos Aires // In-Situ & Remoto</span>
+        </div>
+      </div>
+    </footer>
   </div>
 </Layout>
 

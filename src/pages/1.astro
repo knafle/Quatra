@@ -1,14 +1,13 @@
 ---
-const b = import.meta.env.BASE_URL;
 import Layout from '../layouts/Layout.astro';
 import VersionSwitcher from '../components/VersionSwitcher.astro';
-import { siteConfig } from '../data/siteConfig';
+import { siteConfig, url } from '../data/siteConfig';
 
 const pillars = [
-  { num: "01", title: "Diagnóstico In-Situ", desc: "Vamos a tu muelle de carga y depósito. Cronometramos cuellos de botella y observamos cómo trabaja realmente tu gente." },
-  { num: "02", title: "Herramientas Satélite", desc: "Desarrollamos software y apps móviles a medida en 7 a 14 días. Botones grandes y cero curvas de aprendizaje." },
-  { num: "03", title: "Integración Invisible", desc: "Se conecta a tus planillas de Excel, facturación o ERP actual. Cero doble tipeo y sin migraciones forzadas." },
-  { num: "04", title: "Medición de Impacto", desc: "Capacitamos en planta en 10 minutos y garantizamos un ahorro medible de horas-hombre desde la primera semana." }
+  { num: "01", title: "Auditoría Operativa In-Situ", desc: "Vamos a tu muelle de carga y depósito. Cronometramos tiempos muertos, cuellos de botella y observamos cómo trabaja realmente tu gente." },
+  { num: "02", title: "Rediseño de Procesos", desc: "Simplificamos tareas, ordenamos la operativa y eliminamos pasos innecesarios antes de tocar una sola línea de código." },
+  { num: "03", title: "Herramientas y Soft a Medida", desc: "Desarrollamos programas y automatizaciones especializadas para que las tools se adapten a tus procesos, y no tu equipo a las tools." },
+  { num: "04", title: "Medición de Rendimiento", desc: "Acompañamos a tu personal en planta y auditamos las horas-hombre recuperadas y la aceleración de despachos desde la semana 1." }
 ];
 
 const solutions = [
@@ -43,35 +42,37 @@ const solutions = [
 ];
 
 const faqs = [
-  { q: "¿Tengo que cambiar mi sistema actual o ERP?", a: "No. Quatra crea herramientas satélite que se integran a lo que ya usás (incluso tus planillas de Excel) para resolver el cuello de botella puntual." },
-  { q: "¿Cuánto tarda la primera herramienta?", a: "Entre 7 y 14 días corridos desde el diagnóstico in-situ. Entregas ágiles y funcionales sin demoras burocráticas." },
-  { q: "¿Qué pasa si mis operarios rechazan el software?", a: "Diseñamos las herramientas mirando a tus operarios trabajar: botones grandes, 2 clics y sin jerga técnica. Además, nosotros mismos los capacitamos en el muelle en 10 minutos." },
-  { q: "¿Cómo es el esquema de cobro?", a: "Un costo cerrado por el desarrollo de la herramienta (sin licencias mensuales por usuario que aumentan sin control) y un abono opcional de soporte y mantenimiento." },
-  { q: "¿La visita inicial tiene algún costo?", a: "No. Vamos 2 horas a tu depósito, relevamos el proceso y te entregamos un mapa con las fugas de tiempo detectadas sin ningún compromiso." }
+  { q: "¿Son una empresa de software?", a: "No. Somos consultores de rendimiento operativo para logística. Nuestro objetivo es que tu empresa facture más, despache más rápido y gaste menos horas de trabajo. El software a medida es solo una de las herramientas que creamos para destrabar tu operación, pero el foco siempre es el rendimiento de tu negocio." },
+  { q: "¿Tengo que cambiar mi sistema actual o ERP?", a: "No. Quatra crea herramientas satélite y ajustes de procesos que se integran a lo que ya usás (incluso tus planillas de Excel) para resolver el cuello de botella puntual sin migraciones traumáticas." },
+  { q: "¿Cuánto tarda la primera mejora o herramienta?", a: "Entre 7 y 14 días corridos desde el diagnóstico in-situ. Entregas ágiles y funcionales sin demoras burocráticas." },
+  { q: "¿Qué pasa si mis operarios rechazan el cambio?", a: "Diseñamos las herramientas mirando a tus operarios trabajar: botones grandes, 2 clics y sin jerga técnica. Además, nosotros mismos los capacitamos en el muelle en 10 minutos." },
+  { q: "¿Cómo es el esquema de cobro?", a: "Un costo cerrado por el proyecto de optimización y desarrollo de la herramienta (sin licencias mensuales por usuario que aumentan sin control) y un abono opcional de acompañamiento y soporte." },
+  { q: "¿La visita inicial tiene algún costo?", a: "No. Vamos 2 horas a tu depósito, relevamos el proceso y te entregamos un mapa con las fugas de rendimiento detectadas sin ningún compromiso." }
 ];
 ---
 
-<Layout title="Quatra — Minimal Noir | Software Satélite para Logística">
+<Layout title="Quatra — Minimal Noir | Consultoría de Rendimiento Operativo">
   <VersionSwitcher currentVersion="1" />
 
   <div class="bg-black text-neutral-100 min-h-screen selection:bg-white selection:text-black">
     <!-- Header Minimal -->
     <header class="border-b border-neutral-900 bg-black/80 backdrop-blur-md sticky top-0 z-40 pt-10 sm:pt-14 pb-4">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-        <a href={`${b}1`} class="flex items-center gap-3.5 group">
-          <img src={`${b}quatra-badge-hd.png`} alt="Quatra Logo" class="w-10 h-10 rounded-xl shadow-lg group-hover:scale-105 transition-transform" />
+        <a href={url("1")} class="flex items-center gap-3.5 group">
+          <img src={url("quatra-badge.svg")} alt="Quatra Logo" class="w-10 h-10 rounded-xl shadow-lg group-hover:scale-105 transition-transform" />
           <div class="flex items-baseline gap-2">
             <span class="text-xl font-bold tracking-tight text-white">Quatra</span>
-            <span class="text-xs text-neutral-500 font-mono hidden sm:inline">/ operaciones & software</span>
+            <span class="text-xs text-neutral-500 font-mono hidden sm:inline">/ rendimiento operativo</span>
           </div>
         </a>
 
         <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-wider text-neutral-400 font-mono">
-          <a href="#problema" class="hover:text-white transition-colors">Problema</a>
+          <a href="#enfoque" class="hover:text-white transition-colors">Enfoque</a>
           <a href="#pilares" class="hover:text-white transition-colors">4 Pilares</a>
           <a href="#calculadora" class="hover:text-white transition-colors">Calculadora</a>
           <a href="#soluciones" class="hover:text-white transition-colors">Soluciones</a>
           <a href="#nosotros" class="hover:text-white transition-colors">Nosotros</a>
+          <a href={url("logo")} class="text-neutral-500 hover:text-white transition-colors">Brand Kit</a>
         </nav>
 
         <a
@@ -88,33 +89,33 @@ const faqs = [
     <main>
       <!-- Hero Minimalist Noir -->
       <section class="pt-16 pb-24 md:pt-28 md:pb-36 border-b border-neutral-900 relative overflow-hidden">
-        <!-- Center Watermark of the Knot -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] opacity-[0.03] pointer-events-none">
-          <img src={`${b}quatra-symbol-white.png`} alt="" class="w-full h-full object-contain animate-spin" style="animation-duration: 200s;" />
+        <!-- Center Watermark of the Knot (Vector SVG) -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] opacity-[0.035] pointer-events-none">
+          <img src={url("quatra-knot-white.svg")} alt="" class="w-full h-full object-contain animate-spin" style="animation-duration: 220s;" />
         </div>
 
         <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
-          <!-- Screenshot Card Showcase -->
+          <!-- Positioning Badge -->
           <div class="inline-flex items-center gap-3.5 p-2 pr-5 rounded-2xl bg-neutral-900/80 border border-neutral-800 mb-10 shadow-2xl">
-            <img src={`${b}quatra-badge-hd.png`} alt="Quatra Logo" class="w-9 h-9 rounded-lg" />
+            <img src={url("quatra-badge.svg")} alt="Quatra Logo" class="w-9 h-9 rounded-lg" />
             <div class="text-left">
-              <span class="text-xs font-bold text-white block">Quatra</span>
-              <span class="text-[11px] text-neutral-400 block -mt-0.5">Software que calza con tu operación, no al revés.</span>
+              <span class="text-xs font-bold text-white block">Quatra // Rendimiento Logístico</span>
+              <span class="text-[11px] text-neutral-400 block -mt-0.5">Consultoría de procesos y herramientas a medida para PyMEs.</span>
             </div>
           </div>
 
           <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.08]">
-            Tu operación no debe adaptarse al software. <br />
-            <span class="text-neutral-400">El software debe adaptarse a tu operación.</span>
+            Hacemos que las tools se adapten a tu operación. <br />
+            <span class="text-neutral-400">No tu equipo a las tools.</span>
           </h1>
 
           <p class="mt-8 text-lg sm:text-xl text-neutral-400 max-w-2xl mx-auto font-light leading-relaxed">
-            Vamos a tu depósito o base logística, detectamos dónde se pierden horas y construimos herramientas a medida para devolverle cientos de horas-hombre a tu equipo.
+            <strong class="text-white font-medium">No somos una empresa de software.</strong> Somos consultores operativos: nos metemos en tu depósito o base, revisamos tus procesos en el lugar y creamos herramientas y programas especializados para recuperar cientos de horas-hombre al mes.
           </p>
 
           <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20gratuito%20con%20el%20equipo%20de%20Quatra.`}
+              href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%20rendimiento%20con%20el%20equipo%20de%20Quatra.`}
               target="_blank"
               rel="noopener noreferrer"
               class="w-full sm:w-auto px-8 py-4 text-xs font-bold uppercase tracking-wider rounded-xl bg-white text-black hover:bg-neutral-200 transition-all shadow-xl"
@@ -133,35 +134,91 @@ const faqs = [
           <!-- Quick Metrics Grid -->
           <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto border-t border-neutral-900 pt-12 text-left">
             <div>
-              <div class="text-2xl font-mono font-bold text-white">7 a 14 d.</div>
-              <div class="text-xs text-neutral-500 mt-1">Primera herramienta en planta</div>
+              <div class="text-2xl font-mono font-bold text-white">In-Situ</div>
+              <div class="text-xs text-neutral-500 mt-1">Auditoría real en el muelle de carga</div>
             </div>
             <div>
               <div class="text-2xl font-mono font-bold text-white">+120 hs</div>
-              <div class="text-xs text-neutral-500 mt-1">Recuperadas por mes promedio</div>
+              <div class="text-xs text-neutral-500 mt-1">Horas-hombre recuperadas promedio</div>
             </div>
             <div>
-              <div class="text-2xl font-mono font-bold text-white">0 Fricción</div>
-              <div class="text-xs text-neutral-500 mt-1">Se integra a tus Excels y ERP</div>
+              <div class="text-2xl font-mono font-bold text-white">Tools Custom</div>
+              <div class="text-xs text-neutral-500 mt-1">Programas hechos a tu proceso exacto</div>
             </div>
             <div>
-              <div class="text-2xl font-mono font-bold text-white">4 Hermanos</div>
-              <div class="text-xs text-neutral-500 mt-1">Trato directo con los fundadores</div>
+              <div class="text-2xl font-mono font-bold text-white">0 Licencias</div>
+              <div class="text-xs text-neutral-500 mt-1">Sin costos abusivos por usuario</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Los 4 Pilares (The 4 continuous loops) -->
+      <!-- Section: Why we are NOT a tech company -->
+      <section id="enfoque" class="py-24 border-b border-neutral-900 bg-neutral-950/40">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <div class="max-w-3xl mx-auto text-center mb-16">
+            <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Nuestra Filosofía</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-2">
+              Por qué no somos una empresa de software tradicional
+            </h2>
+            <p class="text-neutral-400 mt-4 text-sm sm:text-base leading-relaxed">
+              Las empresas tecnológicas quieren venderte su plataforma enlatada, cobrarte licencias mensuales y forzar a tus operarios a cambiar su forma de trabajar. Nosotros hacemos exactamente lo contrario:
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-8 rounded-2xl bg-neutral-950 border border-neutral-800 flex flex-col justify-between">
+              <div>
+                <div class="text-xs font-mono text-red-400 uppercase tracking-wider mb-4">Software Tradicional</div>
+                <h3 class="text-lg font-bold text-white mb-2">Venden licencias, no resultados</h3>
+                <p class="text-xs text-neutral-400 leading-relaxed">
+                  Te cobran por cada usuario que entra al sistema, la implementación tarda meses y si tus operarios no se adaptan, el problema es tuyo.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-neutral-900 text-xs font-mono text-neutral-500">
+                Foco: Cobrarte la mensualidad
+              </div>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-neutral-950 border border-neutral-800 flex flex-col justify-between">
+              <div>
+                <div class="text-xs font-mono text-amber-400 uppercase tracking-wider mb-4">Software Factories</div>
+                <h3 class="text-lg font-bold text-white mb-2">Cobran por hora de desarrollo</h3>
+                <p class="text-xs text-neutral-400 leading-relaxed">
+                  No conocen un depósito ni hablaron con un chofer en su vida. Te piden que especifiques cada botón y los costos se disparan sin control.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-neutral-900 text-xs font-mono text-neutral-500">
+                Foco: Vender horas de código
+              </div>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-white text-black flex flex-col justify-between shadow-2xl">
+              <div>
+                <div class="text-xs font-mono text-neutral-900 uppercase tracking-wider font-bold mb-4">El Modelo Quatra</div>
+                <h3 class="text-lg font-bold text-black mb-2">Consultoría de Rendimiento Operativo</h3>
+                <p class="text-xs text-neutral-700 leading-relaxed">
+                  Vamos a tu muelle de carga, entendemos el flujo real y armamos las tools especializadas que eliminan cuellos de botella. El software es solo una herramienta; el objetivo es tu rendimiento.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-neutral-200 text-xs font-mono font-bold text-black">
+                Foco: Ganancia en horas y eficiencia
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Los 4 Pilares -->
       <section id="pilares" class="py-24 border-b border-neutral-900">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
           <div class="max-w-2xl mb-16">
-            <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Metodología Quatra</span>
+            <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Metodología de Campo</span>
             <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-2">
-              Los 4 Pilares: Un flujo continuo sin fricción
+              Los 4 Pilares: Del muelle de carga a la mejora medible
             </h2>
             <p class="text-neutral-400 mt-3 text-sm">
-              Inspirado en la geometría continua de nuestro isotipo: cuatro fases conectadas para erradicar las ineficiencias de raíz.
+              Inspirado en la geometría continua de nuestro isotipo: cuatro fases interconectadas para optimizar la operativa real.
             </p>
           </div>
 
@@ -174,7 +231,7 @@ const faqs = [
                   <p class="text-xs text-neutral-400 leading-relaxed">{p.desc}</p>
                 </div>
                 <div class="mt-6 pt-4 border-t border-neutral-900 text-[11px] text-neutral-500 font-mono">
-                  Quatra Methodology
+                  Quatra Performance
                 </div>
               </div>
             ))}
@@ -186,12 +243,12 @@ const faqs = [
       <section id="calculadora" class="py-24 border-b border-neutral-900 bg-neutral-950/60">
         <div class="max-w-5xl mx-auto px-4 sm:px-6">
           <div class="text-center max-w-2xl mx-auto mb-14">
-            <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Simulador Operativo</span>
+            <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Simulador de Fugas Operativas</span>
             <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-2">
-              ¿Cuántas horas pierde tu equipo en planillas?
+              ¿Cuántas horas pierde tu equipo en tareas mecánicas?
             </h2>
             <p class="text-neutral-400 mt-3 text-sm">
-              Ajustá los parámetros para estimar el tiempo y costo que podés recuperar este mes.
+              Estimá el tiempo y costo operativo que podés recuperar revisando tus procesos y automatizando cuellos de botella.
             </p>
           </div>
 
@@ -208,7 +265,7 @@ const faqs = [
 
                 <div>
                   <div class="flex justify-between items-center mb-2 text-xs">
-                    <span class="text-neutral-300 font-medium">Horas diarias por persona en planillas y carga manual:</span>
+                    <span class="text-neutral-300 font-medium">Horas diarias por persona en planillas y carga repetitiva:</span>
                     <span id="v1-hours-val" class="text-white font-mono font-bold bg-neutral-900 px-2.5 py-1 rounded">2.5 hs/día</span>
                   </div>
                   <input id="v1-hours-range" type="range" min="0.5" max="5" value="2.5" step="0.5" class="w-full h-1.5 bg-neutral-800 rounded appearance-none cursor-pointer accent-white" />
@@ -258,9 +315,9 @@ const faqs = [
       <section id="soluciones" class="py-24 border-b border-neutral-900">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
           <div class="max-w-2xl mb-16">
-            <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Módulos a Medida</span>
+            <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Ejemplos de Tools Especializadas</span>
             <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-2">
-              Herramientas que resuelven dolores cotidianos
+              Herramientas que calzan en tu proceso
             </h2>
           </div>
 
@@ -279,7 +336,7 @@ const faqs = [
                   </div>
                 </div>
                 <div class="mt-6 pt-4 border-t border-neutral-900 flex justify-between items-center text-xs">
-                  <span class="text-neutral-500 font-mono">Sprint: ~10 días</span>
+                  <span class="text-neutral-500 font-mono">Implementación: ~10 días</span>
                   <a href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Me%20interesa%20la%20tool%20de%20${encodeURIComponent(s.title)}.`} target="_blank" class="text-white hover:underline font-medium">
                     Consultar →
                   </a>
@@ -290,15 +347,15 @@ const faqs = [
         </div>
       </section>
 
-      <!-- Nosotros (Los 4 Hermanos) -->
+      <!-- Nosotros (Los Hermanos) -->
       <section id="nosotros" class="py-24 border-b border-neutral-900">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <img src={`${b}quatra-badge-hd.png`} alt="Quatra" class="w-16 h-16 rounded-2xl mx-auto mb-6 shadow-2xl" />
+          <img src={url("quatra-badge.svg")} alt="Quatra" class="w-16 h-16 rounded-2xl mx-auto mb-6 shadow-2xl" />
           <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            Ingeniería directa con los creadores
+            Consultoría directa con los fundadores
           </h2>
           <p class="mt-4 text-neutral-400 text-base max-w-2xl mx-auto font-light leading-relaxed">
-            Somos hermanos y desarrolladores. No somos una consultora que manda comerciales a vender y pasantes a programar. Quienes pisan tu depósito son quienes escriben las herramientas de tu operación.
+            Somos hermanos con experiencia en optimización operativa. No te mandamos vendedores ni intermediarios. Los que nos ponemos los zapatos de seguridad, vamos a tu depósito y auditamos tus procesos somos nosotros.
           </p>
         </div>
       </section>
@@ -307,7 +364,7 @@ const faqs = [
       <section class="py-24 bg-neutral-950">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
-            Dejá de perder horas en tareas manuales.
+            Mejoremos el rendimiento de tu logística hoy.
           </h2>
           <p class="mt-4 text-neutral-400 text-sm sm:text-base max-w-xl mx-auto">
             Coordinemos una visita de 2 horas en tu depósito sin cargo para auditar tus procesos.
@@ -330,10 +387,13 @@ const faqs = [
     <footer class="py-12 border-t border-neutral-900 text-xs text-neutral-500 font-mono">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div class="flex items-center gap-2">
-          <img src={`${b}quatra-badge-hd.png`} alt="" class="w-4 h-4 rounded-sm" />
-          <span>© {new Date().getFullYear()} Quatra. Minimal Noir Edition.</span>
+          <img src={url("quatra-badge.svg")} alt="" class="w-4 h-4 rounded-sm" />
+          <span>© {new Date().getFullYear()} Quatra. Consultoría de Rendimiento Operativo.</span>
         </div>
-        <span>Buenos Aires, Argentina // Presencial & Remoto</span>
+        <div class="flex items-center gap-4">
+          <a href={url("logo")} class="text-neutral-400 hover:text-white transition-colors">Brand Kit & Logos</a>
+          <span>Buenos Aires, Argentina // Presencial & Remoto</span>
+        </div>
       </div>
     </footer>
   </div>
