@@ -1,0 +1,60 @@
+---
+import { siteConfig } from '../data/siteConfig';
+
+const faqs = [
+  {
+    q: "¿Tengo que cambiar mi sistema contable o ERP actual?",
+    a: "No, en absoluto. No venimos a venderte un ERP gigantesco para reemplazar todo. Desarrollamos herramientas satélites a medida que se conectan con lo que ya tenés (incluso si hoy todo funciona en Excel o sistemas viejos) para solucionar los cuellos de botella puntuales."
+  },
+  {
+    q: "¿Cuánto tarda en estar funcionando la primera herramienta?",
+    a: "Entre 7 y 14 días corridos desde la visita de diagnóstico in-situ. Trabajamos con entregas rápidas y funcionales (quick wins) para que tu equipo empiece a ahorrar horas-hombre de inmediato."
+  },
+  {
+    q: "¿Qué pasa si mis operarios o choferes no se llevan bien con la tecnología?",
+    a: "Esa es justamente la razón por la que existimos. El software comercial fracasa porque está pensado por ingenieros para ingenieros. Nosotros diseñamos pantallas con botones grandes, 2 o 3 opciones claras y sin jerga técnica. Además, vamos nosotros mismos al muelle a enseñarles en 10 minutos."
+  },
+  {
+    q: "¿Cómo funciona el modelo de cobro?",
+    a: "Es 100% predecible para una PyME. Cobramos un costo fijo y cerrado por el desarrollo e instalación de la herramienta (sin licencias en dólares por usuario que suban cada mes). Luego podés optar por un abono mensual muy accesible que cubre soporte directo por WhatsApp, servidores y mejoras continuas."
+  },
+  {
+    q: "¿La visita y diagnóstico inicial realmente son sin costo?",
+    a: "Sí. Vamos a tu depósito o base durante 2 horas, analizamos cómo trabaja tu equipo y te entregamos un reporte con las fugas de horas-hombre detectadas y una propuesta de solución. Si decidís no avanzar, no nos debés nada."
+  }
+];
+---
+
+<section id="faq" class="py-20 md:py-28 relative">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        Preguntas Frecuentes
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Respuestas directas, sin vueltas
+      </h2>
+      <p class="mt-4 text-gray-300 text-base">
+        Todo lo que necesitás saber antes de coordinar nuestra visita.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, idx) => (
+        <details class="group bg-gray-900/60 border border-gray-800 rounded-2xl p-6 transition-colors open:bg-gray-900/90 open:border-blue-500/30">
+          <summary class="flex justify-between items-center cursor-pointer list-none text-base sm:text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+            <span>{faq.q}</span>
+            <span class="ml-4 shrink-0 transition-transform duration-300 group-open:rotate-180 text-blue-400">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-sm sm:text-base text-gray-300 leading-relaxed border-t border-gray-800/80 pt-4">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

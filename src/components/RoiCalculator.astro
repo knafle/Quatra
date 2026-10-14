@@ -1,0 +1,218 @@
+---
+import { siteConfig } from '../data/siteConfig';
+---
+
+<section id="calculadora" class="py-20 md:py-28 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        Herramienta Interactiva
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Calculá cuántas horas-hombre se le escapan a tu operación
+      </h2>
+      <p class="mt-4 text-gray-300 text-base sm:text-lg">
+        Ingresá los datos de tu equipo administrativo y de depósito para estimar el tiempo y costo que podés recuperar con herramientas hechas a medida.
+      </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto bg-gray-900/80 border border-gray-800 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Sliders Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Input 1: Personas -->
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label for="employees-range" class="text-sm font-semibold text-gray-200">
+                Personas en administración, depósito o despacho:
+              </label>
+              <span id="employees-val" class="text-blue-400 font-bold text-lg bg-blue-950/60 border border-blue-800/60 px-3 py-0.5 rounded-lg">
+                5 personas
+              </span>
+            </div>
+            <input
+              id="employees-range"
+              type="range"
+              min="1"
+              max="40"
+              value="5"
+              step="1"
+              class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-blue-500"
+            />
+            <div class="flex justify-between text-xs text-gray-500 mt-1">
+              <span>1 persona</span>
+              <span>20</span>
+              <span>40 personas</span>
+            </div>
+          </div>
+
+          <!-- Input 2: Horas manuales por día -->
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label for="hours-range" class="text-sm font-semibold text-gray-200">
+                Horas diarias por persona en carga manual, planillas y control:
+              </label>
+              <span id="hours-val" class="text-amber-400 font-bold text-lg bg-amber-950/60 border border-amber-800/60 px-3 py-0.5 rounded-lg">
+                2.5 hs/día
+              </span>
+            </div>
+            <input
+              id="hours-range"
+              type="range"
+              min="0.5"
+              max="5"
+              value="2.5"
+              step="0.5"
+              class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-amber-500"
+            />
+            <div class="flex justify-between text-xs text-gray-500 mt-1">
+              <span>30 min (0.5h)</span>
+              <span>2.5h</span>
+              <span>5 horas/día</span>
+            </div>
+          </div>
+
+          <!-- Input 3: Moneda o costo hora estimado -->
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label for="cost-range" class="text-sm font-semibold text-gray-200">
+                Costo promedio por hora hombre (estimado):
+              </label>
+              <span id="cost-val" class="text-emerald-400 font-bold text-lg bg-emerald-950/60 border border-emerald-800/60 px-3 py-0.5 rounded-lg">
+                $10 USD / hr
+              </span>
+            </div>
+            <input
+              id="cost-range"
+              type="range"
+              min="5"
+              max="40"
+              value="10"
+              step="1"
+              class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+            />
+            <div class="flex justify-between text-xs text-gray-500 mt-1">
+              <span>$5/h</span>
+              <span>$20/h</span>
+              <span>$40/h</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-gray-800/40 border border-gray-700/50 text-xs text-gray-400 leading-relaxed">
+            💡 <em>Dato de campo:</em> En una PyME logística promedio de 5 empleados en administración y depósito, se pierden entre 200 y 300 horas al mes re-tipeando remitos, buscando paquetes perdidos y consolidando planillas de Excel.
+          </div>
+        </div>
+
+        <!-- Live Results Column -->
+        <div class="lg:col-span-5 bg-gradient-to-b from-gray-800/90 to-gray-900/95 border border-blue-500/30 rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="text-xs uppercase tracking-wider font-semibold text-gray-400 mb-4">
+              Impacto Mensual Estimado
+            </div>
+
+            <!-- Horas perdidas -->
+            <div class="mb-5 pb-5 border-b border-gray-800">
+              <div class="text-xs text-gray-400">Tiempo quemado en tareas mecánicas:</div>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span id="lost-hours-total" class="text-3xl sm:text-4xl font-extrabold text-white">250</span>
+                <span class="text-sm font-medium text-gray-400">horas/mes</span>
+              </div>
+            </div>
+
+            <!-- Horas recuperables -->
+            <div class="mb-5 pb-5 border-b border-gray-800">
+              <div class="text-xs text-emerald-400 font-medium">Horas recuperables estimadas (con automatizaciones):</div>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span id="recoverable-hours" class="text-4xl sm:text-5xl font-black text-emerald-400">175</span>
+                <span class="text-sm font-medium text-emerald-300">horas/mes</span>
+              </div>
+              <p class="text-[11px] text-gray-400 mt-1">Aproximadamente 70% de reducción en tiempos de tipeo y control.</p>
+            </div>
+
+            <!-- Ahorro económico anual -->
+            <div class="mb-6">
+              <div class="text-xs text-gray-400">Equivalente económico recuperable al año:</div>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span id="annual-savings" class="text-2xl sm:text-3xl font-extrabold text-amber-400">$21.000</span>
+                <span class="text-xs font-medium text-gray-400">USD / año</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic WhatsApp CTA with the calculated values -->
+          <a
+            id="whatsapp-calc-btn"
+            href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Hice%20el%20c%C3%A1lculo%20en%20su%20web%20para%20un%20equipo%20de%205%20personas%20y%20nos%20da%20175%20hs%20recuperables/mes.%20Me%20gustar%C3%ADa%20coordinar%20una%20visita.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-600/30 transition-all duration-200 hover:scale-[1.02]"
+          >
+            <span>Recuperar estas horas en mi empresa</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { siteConfig } from '../data/siteConfig';
+
+  function initCalculator() {
+    const empInput = document.getElementById('employees-range') as HTMLInputElement | null;
+    const hoursInput = document.getElementById('hours-range') as HTMLInputElement | null;
+    const costInput = document.getElementById('cost-range') as HTMLInputElement | null;
+
+    const empVal = document.getElementById('employees-val');
+    const hoursVal = document.getElementById('hours-val');
+    const costVal = document.getElementById('cost-val');
+
+    const lostHoursEl = document.getElementById('lost-hours-total');
+    const recoverableHoursEl = document.getElementById('recoverable-hours');
+    const annualSavingsEl = document.getElementById('annual-savings');
+    const waBtn = document.getElementById('whatsapp-calc-btn') as HTMLAnchorElement | null;
+
+    if (!empInput || !hoursInput || !costInput) return;
+
+    function recalculate() {
+      const employees = parseInt(empInput.value, 10);
+      const hoursPerDay = parseFloat(hoursInput.value);
+      const costPerHour = parseFloat(costInput.value);
+
+      // 20 working days per month
+      const monthlyHoursLost = Math.round(employees * hoursPerDay * 20);
+      // 70% estimated recoverable with custom tools
+      const monthlyHoursRecovered = Math.round(monthlyHoursLost * 0.70);
+      // Annual savings
+      const annualSavings = Math.round(monthlyHoursRecovered * costPerHour * 12);
+
+      if (empVal) empVal.textContent = `${employees} ${employees === 1 ? 'persona' : 'personas'}`;
+      if (hoursVal) hoursVal.textContent = `${hoursPerDay} hs/día`;
+      if (costVal) costVal.textContent = `$${costPerHour} USD / hr`;
+
+      if (lostHoursEl) lostHoursEl.textContent = monthlyHoursLost.toLocaleString('es-AR');
+      if (recoverableHoursEl) recoverableHoursEl.textContent = monthlyHoursRecovered.toLocaleString('es-AR');
+      if (annualSavingsEl) annualSavingsEl.textContent = `$${annualSavings.toLocaleString('es-AR')}`;
+
+      if (waBtn) {
+        const msg = encodeURIComponent(
+          `Hola! Estuve usando la calculadora en su web para un equipo de ${employees} personas. Estimamos que perdemos unas ${monthlyHoursLost} horas al mes en planillas y tareas manuales y podríamos recuperar ~${monthlyHoursRecovered} horas con sus herramientas. Me gustaría coordinar un diagnóstico operativo sin costo.`
+        );
+        waBtn.href = `https://wa.me/${siteConfig.contactWhatsApp}?text=${msg}`;
+      }
+    }
+
+    empInput.addEventListener('input', recalculate);
+    hoursInput.addEventListener('input', recalculate);
+    costInput.addEventListener('input', recalculate);
+
+    recalculate();
+  }
+
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', initCalculator);
+  initCalculator();
+</script>

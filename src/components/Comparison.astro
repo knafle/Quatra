@@ -1,0 +1,117 @@
+---
+import { siteConfig } from '../data/siteConfig';
+---
+
+<section id="problema" class="py-20 md:py-28 bg-[#0E1322] border-y border-gray-800/60 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-blue-400">El Gran Dilema de la PyME Logística</h2>
+      <p class="mt-3 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        ¿Por qué casi todo el software de logística falla en la práctica?
+      </p>
+      <p class="mt-4 text-gray-300 text-base sm:text-lg leading-relaxed">
+        Las empresas de transporte y depósitos terminan atrapadas entre dos extremos que destruyen la productividad y queman horas de trabajo:
+      </p>
+    </div>
+
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      <!-- Card 1: Software Rígido Tradicional -->
+      <div class="rounded-2xl p-6 sm:p-8 bg-gray-900/50 border border-red-500/20 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-red-500/5 rounded-full blur-2xl"></div>
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-red-950/60 border border-red-800/40 text-red-400 text-xs font-semibold uppercase mb-4">
+            Opción A: ERPs Tradicionales
+          </div>
+          <h3 class="text-xl font-bold text-white mb-4">Rígidos y Desconectados de la Realidad</h3>
+          <ul class="space-y-3.5 text-sm text-gray-300">
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-400 font-bold shrink-0">✕</span>
+              <span>Obligan a tu equipo a cambiar sus procesos para adaptarse al sistema.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-400 font-bold shrink-0">✕</span>
+              <span>Implementaciones de 6 a 12 meses que quedan a medias.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-400 font-bold shrink-0">✕</span>
+              <span>Costos altísimos en dólares por usuario y soporte burocrático.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-400 font-bold shrink-0">✕</span>
+              <span>Personal de muelle y choferes lo rechazan por complejo.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-6 pt-4 border-t border-gray-800/80 text-xs font-semibold text-red-400">
+          Resultado: Dinero tirado y adopción nula.
+        </div>
+      </div>
+
+      <!-- Card 2: El Caos de Excel y WhatsApp -->
+      <div class="rounded-2xl p-6 sm:p-8 bg-gray-900/50 border border-amber-500/20 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-full blur-2xl"></div>
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-950/60 border border-amber-800/40 text-amber-400 text-xs font-semibold uppercase mb-4">
+            Opción B: El "Parche" Artesanal
+          </div>
+          <h3 class="text-xl font-bold text-white mb-4">Planillas Infinitas y WhatsApp</h3>
+          <ul class="space-y-3.5 text-sm text-gray-300">
+            <li class="flex items-start gap-2.5">
+              <span class="text-amber-400 font-bold shrink-0">!</span>
+              <span>15 planillas de Excel que se rompen, pisan datos y duplican trabajo.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-amber-400 font-bold shrink-0">!</span>
+              <span>Horas perdidas re-tipeando remitos, hojas de ruta y facturas.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-amber-400 font-bold shrink-0">!</span>
+              <span>Información dispersa en chats de WhatsApp que se olvida o pierde.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-amber-400 font-bold shrink-0">!</span>
+              <span>Tu equipo vive apagando incendios en lugar de hacer crecer el negocio.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-6 pt-4 border-t border-gray-800/80 text-xs font-semibold text-amber-400">
+          Resultado: Cientos de horas-hombre quemadas al mes.
+        </div>
+      </div>
+
+      <!-- Card 3: Nuestra Propuesta a Medida -->
+      <div class="rounded-2xl p-6 sm:p-8 bg-gradient-to-b from-blue-950/40 to-gray-900/80 border-2 border-blue-500/40 flex flex-col justify-between relative shadow-xl shadow-blue-500/10 scale-100 md:-translate-y-2">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+          El Enfoque {siteConfig.brandName}
+        </div>
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-900/60 border border-blue-700/50 text-blue-300 text-xs font-semibold uppercase mb-4 mt-2">
+            Nuestra Solución
+          </div>
+          <h3 class="text-xl font-bold text-white mb-4">Herramientas Satélite a Tu Medida</h3>
+          <ul class="space-y-3.5 text-sm text-gray-200">
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-bold shrink-0">✓</span>
+              <span><strong>Se adapta a tu proceso:</strong> Las herramientas calzan en tu dinámica real de depósito o despacho.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-bold shrink-0">✓</span>
+              <span><strong>Listo en 1 a 2 semanas:</strong> Construimos módulos ágiles para resolver cuellos de botella urgentes.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-bold shrink-0">✓</span>
+              <span><strong>No rompe lo que tenés:</strong> Se integra con tus Excels, facturación o ERP actual.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-bold shrink-0">✓</span>
+              <span><strong>Adopción del 100%:</strong> Interfaz tan clara que un operario aprende a usarla en 5 minutos.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-6 pt-4 border-t border-blue-800/60 text-xs font-semibold text-emerald-400">
+          Resultado: Ahorro masivo de tiempo desde el día 1.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

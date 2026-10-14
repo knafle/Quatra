@@ -1,0 +1,391 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VersionSwitcher from '../components/VersionSwitcher.astro';
+import { siteConfig } from '../data/siteConfig';
+
+const pillars = [
+  { num: "01", title: "Diagnóstico In-Situ", desc: "Vamos a tu muelle de carga y depósito. Cronometramos cuellos de botella y observamos cómo trabaja realmente tu gente." },
+  { num: "02", title: "Herramientas Satélite", desc: "Desarrollamos software y apps móviles a medida en 7 a 14 días. Botones grandes y cero curvas de aprendizaje." },
+  { num: "03", title: "Integración Invisible", desc: "Se conecta a tus planillas de Excel, facturación o ERP actual. Cero doble tipeo y sin migraciones forzadas." },
+  { num: "04", title: "Medición de Impacto", desc: "Capacitamos en planta en 10 minutos y garantizamos un ahorro medible de horas-hombre desde la primera semana." }
+];
+
+const solutions = [
+  {
+    tag: "Despacho & Rutas",
+    title: "Automatizador de Hojas de Ruta y Remitos",
+    before: "2 horas diarias copiando pedidos de Excel y armando PDFs a mano.",
+    after: "Carga la planilla del día y genera todas las rutas optimizadas en 20 segundos.",
+    saved: "~40 hs/mes recuperadas"
+  },
+  {
+    tag: "Depósito & Stock",
+    title: "Mini-WMS Móvil con Lector de Barras",
+    before: "Anotaciones en papel en el muelle que alguien debe re-tipear a la noche.",
+    after: "App web para escanear con la cámara del celular o pistola Bluetooth al instante.",
+    saved: "~50 hs/mes recuperadas"
+  },
+  {
+    tag: "Tracking & Choferes",
+    title: "Notificador Automático por WhatsApp",
+    before: "50 llamadas al día preguntando '¿por dónde va el camión?' y avisos manuales.",
+    after: "Mensajes automáticos a clientes y transportistas con mapa y estado en vivo.",
+    saved: "~35 hs/mes recuperadas"
+  },
+  {
+    tag: "Sistemas & Ventas",
+    title: "Conector Satélite de Stock y Facturación",
+    before: "Cargar ventas en el e-commerce, en el ERP y actualizar el Excel a mano.",
+    after: "Sincronización en segundo plano sin intervención humana ni stock fantasma.",
+    saved: "Cero errores de inventario"
+  }
+];
+
+const faqs = [
+  { q: "¿Tengo que cambiar mi sistema actual o ERP?", a: "No. Quatra crea herramientas satélite que se integran a lo que ya usás (incluso tus planillas de Excel) para resolver el cuello de botella puntual." },
+  { q: "¿Cuánto tarda la primera herramienta?", a: "Entre 7 y 14 días corridos desde el diagnóstico in-situ. Entregas ágiles y funcionales sin demoras burocráticas." },
+  { q: "¿Qué pasa si mis operarios rechazan el software?", a: "Diseñamos las herramientas mirando a tus operarios trabajar: botones grandes, 2 clics y sin jerga técnica. Además, nosotros mismos los capacitamos en el muelle en 10 minutos." },
+  { q: "¿Cómo es el esquema de cobro?", a: "Un costo cerrado por el desarrollo de la herramienta (sin licencias mensuales por usuario que aumentan sin control) y un abono opcional de soporte y mantenimiento." },
+  { q: "¿La visita inicial tiene algún costo?", a: "No. Vamos 2 horas a tu depósito, relevamos el proceso y te entregamos un mapa con las fugas de tiempo detectadas sin ningún compromiso." }
+];
+---
+
+<Layout title="Quatra — Minimal Noir | Software Satélite para Logística">
+  <VersionSwitcher currentVersion="1" />
+
+  <div class="bg-black text-neutral-100 min-h-screen selection:bg-white selection:text-black">
+    <!-- Header Minimal -->
+    <header class="border-b border-neutral-900 bg-black/80 backdrop-blur-md sticky top-0 z-40 pt-10 sm:pt-14 pb-4">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+        <a href="/1" class="flex items-center gap-3.5 group">
+          <img src="/quatra-badge-hd.png" alt="Quatra Logo" class="w-10 h-10 rounded-xl shadow-lg group-hover:scale-105 transition-transform" />
+          <div class="flex items-baseline gap-2">
+            <span class="text-xl font-bold tracking-tight text-white">Quatra</span>
+            <span class="text-xs text-neutral-500 font-mono hidden sm:inline">/ operaciones & software</span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-wider text-neutral-400 font-mono">
+          <a href="#problema" class="hover:text-white transition-colors">Problema</a>
+          <a href="#pilares" class="hover:text-white transition-colors">4 Pilares</a>
+          <a href="#calculadora" class="hover:text-white transition-colors">Calculadora</a>
+          <a href="#soluciones" class="hover:text-white transition-colors">Soluciones</a>
+          <a href="#nosotros" class="hover:text-white transition-colors">Nosotros</a>
+        </nav>
+
+        <a
+          href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Vi%20la%20web%20de%20Quatra%20y%20me%20gustar%C3%ADa%20coordinar%20un%20diagn%C3%B3stico%20operativo%20gratuito.`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-4 py-2 text-xs uppercase tracking-wider font-bold rounded-lg bg-white text-black hover:bg-neutral-200 transition-all shadow-sm"
+        >
+          Diagnóstico In-Situ
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Minimalist Noir -->
+      <section class="pt-16 pb-24 md:pt-28 md:pb-36 border-b border-neutral-900 relative overflow-hidden">
+        <!-- Center Watermark of the Knot -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] opacity-[0.03] pointer-events-none">
+          <img src="/quatra-symbol-white.png" alt="" class="w-full h-full object-contain animate-spin" style="animation-duration: 200s;" />
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
+          <!-- Screenshot Card Showcase -->
+          <div class="inline-flex items-center gap-3.5 p-2 pr-5 rounded-2xl bg-neutral-900/80 border border-neutral-800 mb-10 shadow-2xl">
+            <img src="/quatra-badge-hd.png" alt="Quatra Logo" class="w-9 h-9 rounded-lg" />
+            <div class="text-left">
+              <span class="text-xs font-bold text-white block">Quatra</span>
+              <span class="text-[11px] text-neutral-400 block -mt-0.5">Software que calza con tu operación, no al revés.</span>
+            </div>
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.08]">
+            Tu operación no debe adaptarse al software. <br />
+            <span class="text-neutral-400">El software debe adaptarse a tu operación.</span>
+          </h1>
+
+          <p class="mt-8 text-lg sm:text-xl text-neutral-400 max-w-2xl mx-auto font-light leading-relaxed">
+            Vamos a tu depósito o base logística, detectamos dónde se pierden horas y construimos herramientas a medida para devolverle cientos de horas-hombre a tu equipo.
+          </p>
+
+          <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20gratuito%20con%20el%20equipo%20de%20Quatra.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full sm:w-auto px-8 py-4 text-xs font-bold uppercase tracking-wider rounded-xl bg-white text-black hover:bg-neutral-200 transition-all shadow-xl"
+            >
+              Agendar Diagnóstico In-Situ (Sin Costo)
+            </a>
+
+            <a
+              href="#calculadora"
+              class="w-full sm:w-auto px-8 py-4 text-xs font-bold uppercase tracking-wider rounded-xl bg-neutral-900 hover:bg-neutral-800 text-neutral-300 border border-neutral-800 transition-all"
+            >
+              Calcular Horas Ahorrables →
+            </a>
+          </div>
+
+          <!-- Quick Metrics Grid -->
+          <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto border-t border-neutral-900 pt-12 text-left">
+            <div>
+              <div class="text-2xl font-mono font-bold text-white">7 a 14 d.</div>
+              <div class="text-xs text-neutral-500 mt-1">Primera herramienta en planta</div>
+            </div>
+            <div>
+              <div class="text-2xl font-mono font-bold text-white">+120 hs</div>
+              <div class="text-xs text-neutral-500 mt-1">Recuperadas por mes promedio</div>
+            </div>
+            <div>
+              <div class="text-2xl font-mono font-bold text-white">0 Fricción</div>
+              <div class="text-xs text-neutral-500 mt-1">Se integra a tus Excels y ERP</div>
+            </div>
+            <div>
+              <div class="text-2xl font-mono font-bold text-white">4 Hermanos</div>
+              <div class="text-xs text-neutral-500 mt-1">Trato directo con los fundadores</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Los 4 Pilares (The 4 continuous loops) -->
+      <section id="pilares" class="py-24 border-b border-neutral-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <div class="max-w-2xl mb-16">
+            <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Metodología Quatra</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-2">
+              Los 4 Pilares: Un flujo continuo sin fricción
+            </h2>
+            <p class="text-neutral-400 mt-3 text-sm">
+              Inspirado en la geometría continua de nuestro isotipo: cuatro fases conectadas para erradicar las ineficiencias de raíz.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {pillars.map((p) => (
+              <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-900 hover:border-neutral-700 transition-colors flex flex-col justify-between">
+                <div>
+                  <div class="text-xs font-mono text-neutral-500 mb-6">{p.num} //</div>
+                  <h3 class="text-base font-bold text-white mb-2">{p.title}</h3>
+                  <p class="text-xs text-neutral-400 leading-relaxed">{p.desc}</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-neutral-900 text-[11px] text-neutral-500 font-mono">
+                  Quatra Methodology
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Calculator (Minimal Noir) -->
+      <section id="calculadora" class="py-24 border-b border-neutral-900 bg-neutral-950/60">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+          <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Simulador Operativo</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-2">
+              ¿Cuántas horas pierde tu equipo en planillas?
+            </h2>
+            <p class="text-neutral-400 mt-3 text-sm">
+              Ajustá los parámetros para estimar el tiempo y costo que podés recuperar este mes.
+            </p>
+          </div>
+
+          <div class="bg-black border border-neutral-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7 space-y-6">
+                <div>
+                  <div class="flex justify-between items-center mb-2 text-xs">
+                    <span class="text-neutral-300 font-medium">Equipo administrativo / depósito:</span>
+                    <span id="v1-emp-val" class="text-white font-mono font-bold bg-neutral-900 px-2.5 py-1 rounded">5 personas</span>
+                  </div>
+                  <input id="v1-emp-range" type="range" min="1" max="40" value="5" class="w-full h-1.5 bg-neutral-800 rounded appearance-none cursor-pointer accent-white" />
+                </div>
+
+                <div>
+                  <div class="flex justify-between items-center mb-2 text-xs">
+                    <span class="text-neutral-300 font-medium">Horas diarias por persona en planillas y carga manual:</span>
+                    <span id="v1-hours-val" class="text-white font-mono font-bold bg-neutral-900 px-2.5 py-1 rounded">2.5 hs/día</span>
+                  </div>
+                  <input id="v1-hours-range" type="range" min="0.5" max="5" value="2.5" step="0.5" class="w-full h-1.5 bg-neutral-800 rounded appearance-none cursor-pointer accent-white" />
+                </div>
+
+                <div>
+                  <div class="flex justify-between items-center mb-2 text-xs">
+                    <span class="text-neutral-300 font-medium">Costo por hora hombre estimado:</span>
+                    <span id="v1-cost-val" class="text-white font-mono font-bold bg-neutral-900 px-2.5 py-1 rounded">$10 USD/h</span>
+                  </div>
+                  <input id="v1-cost-range" type="range" min="5" max="40" value="10" step="1" class="w-full h-1.5 bg-neutral-800 rounded appearance-none cursor-pointer accent-white" />
+                </div>
+              </div>
+
+              <div class="lg:col-span-5 bg-neutral-950 border border-neutral-800 rounded-2xl p-6 flex flex-col justify-between">
+                <div>
+                  <div class="text-[11px] font-mono uppercase tracking-wider text-neutral-500 mb-4">Resultado Estimado</div>
+                  
+                  <div class="mb-4 pb-4 border-b border-neutral-900">
+                    <div class="text-xs text-neutral-400">Horas quemadas al mes:</div>
+                    <div class="text-3xl font-mono font-bold text-neutral-300 mt-1"><span id="v1-lost-hours">250</span> hs</div>
+                  </div>
+
+                  <div class="mb-5">
+                    <div class="text-xs text-neutral-300 font-medium">Horas recuperables con Quatra:</div>
+                    <div class="text-4xl font-mono font-bold text-white mt-1"><span id="v1-recovered-hours">175</span> hs/mes</div>
+                    <div class="text-[11px] text-neutral-500 mt-1 font-mono">Ahorro anual: <span id="v1-annual-savings" class="text-neutral-300 font-bold">$21.000 USD</span></div>
+                  </div>
+                </div>
+
+                <a
+                  id="v1-calc-wa"
+                  href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Hice%20el%20c%C3%A1lculo%20en%20Quatra%20para%205%20personas%20y%20nos%20da%20175%20hs%20recuperables/mes.%20Quiero%20coordinar%20una%20visita.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full py-3 text-center text-xs font-bold uppercase tracking-wider rounded-xl bg-white text-black hover:bg-neutral-200 transition-colors shadow-lg"
+                >
+                  Recuperar estas horas
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Soluciones -->
+      <section id="soluciones" class="py-24 border-b border-neutral-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <div class="max-w-2xl mb-16">
+            <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Módulos a Medida</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-2">
+              Herramientas que resuelven dolores cotidianos
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {solutions.map((s) => (
+              <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-900 hover:border-neutral-800 transition-colors flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-[11px] font-mono uppercase text-neutral-400 bg-neutral-900 px-2.5 py-1 rounded">{s.tag}</span>
+                    <span class="text-xs font-mono text-white font-medium">{s.saved}</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white mb-3">{s.title}</h3>
+                  <div class="space-y-2 text-xs text-neutral-400">
+                    <p><span class="text-neutral-500 font-mono">Antes:</span> {s.before}</p>
+                    <p><span class="text-white font-mono">Con Quatra:</span> {s.after}</p>
+                  </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-neutral-900 flex justify-between items-center text-xs">
+                  <span class="text-neutral-500 font-mono">Sprint: ~10 días</span>
+                  <a href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Me%20interesa%20la%20tool%20de%20${encodeURIComponent(s.title)}.`} target="_blank" class="text-white hover:underline font-medium">
+                    Consultar →
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Nosotros (Los 4 Hermanos) -->
+      <section id="nosotros" class="py-24 border-b border-neutral-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <img src="/quatra-badge-hd.png" alt="Quatra" class="w-16 h-16 rounded-2xl mx-auto mb-6 shadow-2xl" />
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            Ingeniería directa con los creadores
+          </h2>
+          <p class="mt-4 text-neutral-400 text-base max-w-2xl mx-auto font-light leading-relaxed">
+            Somos hermanos y desarrolladores. No somos una consultora que manda comerciales a vender y pasantes a programar. Quienes pisan tu depósito son quienes escriben las herramientas de tu operación.
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA Final -->
+      <section class="py-24 bg-neutral-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
+            Dejá de perder horas en tareas manuales.
+          </h2>
+          <p class="mt-4 text-neutral-400 text-sm sm:text-base max-w-xl mx-auto">
+            Coordinemos una visita de 2 horas en tu depósito sin cargo para auditar tus procesos.
+          </p>
+          <div class="mt-8 flex justify-center">
+            <a
+              href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Queremos%20coordinar%20una%20visita%20de%20diagn%C3%B3stico%20gratuita%20con%20Quatra.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-8 py-4 text-xs font-bold uppercase tracking-wider rounded-xl bg-white text-black hover:bg-neutral-200 transition-all shadow-2xl"
+            >
+              Escribinos por WhatsApp Directo
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Minimal -->
+    <footer class="py-12 border-t border-neutral-900 text-xs text-neutral-500 font-mono">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2">
+          <img src="/quatra-badge-hd.png" alt="" class="w-4 h-4 rounded-sm" />
+          <span>© {new Date().getFullYear()} Quatra. Minimal Noir Edition.</span>
+        </div>
+        <span>Buenos Aires, Argentina // Presencial & Remoto</span>
+      </div>
+    </footer>
+  </div>
+</Layout>
+
+<script>
+  import { siteConfig } from '../data/siteConfig';
+
+  function initV1() {
+    const emp = document.getElementById('v1-emp-range') as HTMLInputElement | null;
+    const hours = document.getElementById('v1-hours-range') as HTMLInputElement | null;
+    const cost = document.getElementById('v1-cost-range') as HTMLInputElement | null;
+
+    const empVal = document.getElementById('v1-emp-val');
+    const hoursVal = document.getElementById('v1-hours-val');
+    const costVal = document.getElementById('v1-cost-val');
+
+    const lostEl = document.getElementById('v1-lost-hours');
+    const recEl = document.getElementById('v1-recovered-hours');
+    const annEl = document.getElementById('v1-annual-savings');
+    const wa = document.getElementById('v1-calc-wa') as HTMLAnchorElement | null;
+
+    if (!emp || !hours || !cost) return;
+
+    function calc() {
+      const e = parseInt(emp.value, 10);
+      const h = parseFloat(hours.value);
+      const c = parseFloat(cost.value);
+
+      const lost = Math.round(e * h * 20);
+      const rec = Math.round(lost * 0.70);
+      const ann = Math.round(rec * c * 12);
+
+      if (empVal) empVal.textContent = `${e} personas`;
+      if (hoursVal) hoursVal.textContent = `${h} hs/día`;
+      if (costVal) costVal.textContent = `$${c} USD/h`;
+
+      if (lostEl) lostEl.textContent = lost.toString();
+      if (recEl) recEl.textContent = rec.toString();
+      if (annEl) annEl.textContent = `$${ann.toLocaleString('es-AR')} USD`;
+
+      if (wa) {
+        const msg = encodeURIComponent(`Hola! Simulamos un cálculo en Quatra para un equipo de ${e} personas y nos da ${rec} hs recuperables/mes. Me gustaría coordinar un diagnóstico operativo sin costo.`);
+        wa.href = `https://wa.me/${siteConfig.contactWhatsApp}?text=${msg}`;
+      }
+    }
+
+    emp.addEventListener('input', calc);
+    hours.addEventListener('input', calc);
+    cost.addEventListener('input', calc);
+    calc();
+  }
+
+  document.addEventListener('DOMContentLoaded', initV1);
+  initV1();
+</script>

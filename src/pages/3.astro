@@ -1,0 +1,257 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VersionSwitcher from '../components/VersionSwitcher.astro';
+import { siteConfig } from '../data/siteConfig';
+---
+
+<Layout title="Quatra — Boutique Studio | Sastrería de Software para Logística">
+  <VersionSwitcher currentVersion="3" />
+
+  <div class="bg-[#0D0F14] text-gray-200 min-h-screen selection:bg-emerald-500 selection:text-black">
+    <!-- Header Boutique -->
+    <header class="border-b border-gray-800/80 bg-[#0D0F14]/85 backdrop-blur-md sticky top-0 z-40 pt-10 sm:pt-14 pb-4">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+        <a href="/3" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center p-2.5 shadow-lg shadow-emerald-500/10">
+            <img src="/quatra-knot-white.png" alt="Quatra" class="w-full h-full object-contain" />
+          </div>
+          <div>
+            <span class="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
+              Estudio Quatra
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            </span>
+            <span class="text-[11px] text-gray-400 block font-light">Software a Medida para Operaciones</span>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-sm text-gray-300 font-medium">
+          <a href="#enfoque" class="hover:text-emerald-400 transition-colors">Nuestro Enfoque</a>
+          <a href="#calculadora" class="hover:text-emerald-400 transition-colors">Calculadora de Horas</a>
+          <a href="#hermanos" class="hover:text-emerald-400 transition-colors">Los Hermanos</a>
+        </div>
+
+        <a
+          href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Nos%20gustar%C3%ADa%20conversar%20sobre%20una%20visita%20de%20diagn%C3%B3stico%20para%20nuestra%20empresa.`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-5 py-2.5 text-xs font-semibold rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/20 transition-all hover:scale-105"
+        >
+          Conversar por WhatsApp
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Boutique -->
+      <section class="pt-16 pb-24 md:pt-28 md:pb-36 border-b border-gray-800/80 relative overflow-hidden">
+        <!-- Soft emerald gradient glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-emerald-600/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs font-medium mb-8">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            Sastrería de Software & Procesos para Logística PyME
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
+            El software debe adaptarse a tu gente, <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
+              no tu gente al software.
+            </span>
+          </h1>
+
+          <p class="mt-8 text-lg sm:text-xl text-gray-300 leading-relaxed font-light max-w-2xl mx-auto">
+            Somos cuatro hermanos desarrolladores. Vamos a tu empresa, nos sentamos con tus operarios y creamos herramientas digitales artesanales para resolver los cuellos de botella que las aplicaciones enlatadas no pueden solucionar.
+          </p>
+
+          <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20in-situ%20con%20los%20hermanos%20de%20Quatra.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full sm:w-auto px-8 py-4 text-sm font-semibold rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
+            >
+              Agendar Diagnóstico Gratuito (2 Hs en tu Planta)
+            </a>
+
+            <a
+              href="#calculadora"
+              class="w-full sm:w-auto px-8 py-4 text-sm font-medium rounded-full bg-gray-900/80 hover:bg-gray-800 text-gray-200 border border-gray-700 transition-colors"
+            >
+              Calcular Horas Ahorrables →
+            </a>
+          </div>
+
+          <!-- Feature Pills -->
+          <div class="mt-16 flex flex-wrap justify-center gap-3 text-xs text-gray-400">
+            <span class="px-4 py-2 rounded-full bg-gray-900/60 border border-gray-800">✓ Entregas operativas en 10 días</span>
+            <span class="px-4 py-2 rounded-full bg-gray-900/60 border border-gray-800">✓ Sin cambiar tus Excels actuales</span>
+            <span class="px-4 py-2 rounded-full bg-gray-900/60 border border-gray-800">✓ Trato personal con los fundadores</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Los Hermanos Fundadores -->
+      <section id="hermanos" class="py-24 border-b border-gray-800/80 bg-[#0B0D12]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+          <div class="p-8 sm:p-12 rounded-3xl bg-[#11141C] border border-gray-800 relative overflow-hidden shadow-2xl">
+            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+              <div class="w-24 h-24 rounded-3xl bg-emerald-600/10 border-2 border-emerald-500/30 flex items-center justify-center shrink-0 p-5 shadow-xl">
+                <img src="/quatra-knot-white.png" alt="Quatra" class="w-full h-full object-contain" />
+              </div>
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Por Qué Quatra</span>
+                <h3 class="text-2xl sm:text-3xl font-bold text-white mt-1">Cercanía familiar, ingeniería seria</h3>
+                <p class="text-sm text-gray-300 mt-3 leading-relaxed font-light">
+                  Creemos que el software logístico fracasa porque los consultores no pisan el depósito. Nosotros venimos de familias de trabajo: nos ponemos los zapatos de seguridad, vamos al muelle de carga, miramos los remitos y diseñamos herramientas que un chofer o despachante puede usar con los ojos cerrados.
+                </p>
+                <div class="mt-5 flex flex-wrap gap-4 text-xs text-gray-400">
+                  <span class="flex items-center gap-1.5"><strong class="text-white">0 burocracia</strong> comercial</span>
+                  <span class="flex items-center gap-1.5"><strong class="text-white">Soporte directo</strong> por WhatsApp</span>
+                  <span class="flex items-center gap-1.5"><strong class="text-white">Compromiso</strong> de palabra</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Calculadora Boutique -->
+      <section id="calculadora" class="py-24 border-b border-gray-800/80">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+          <div class="text-center mb-12">
+            <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Calculadora de Impacto</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">
+              ¿Cuánto tiempo podrías devolverle a tu equipo?
+            </h2>
+          </div>
+
+          <div class="p-8 sm:p-10 rounded-3xl bg-[#11141C] border border-gray-800 shadow-xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7 space-y-6">
+                <div>
+                  <div class="flex justify-between text-xs font-medium mb-2">
+                    <span class="text-gray-300">Equipo en administración o depósito:</span>
+                    <span id="v3-emp-val" class="text-emerald-400 font-bold">5 personas</span>
+                  </div>
+                  <input id="v3-emp-range" type="range" min="1" max="40" value="5" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-medium mb-2">
+                    <span class="text-gray-300">Horas diarias en planillas y carga repetitiva:</span>
+                    <span id="v3-hours-val" class="text-emerald-400 font-bold">2.5 hs/día</span>
+                  </div>
+                  <input id="v3-hours-range" type="range" min="0.5" max="5" value="2.5" step="0.5" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-medium mb-2">
+                    <span class="text-gray-300">Costo hora promedio estimado:</span>
+                    <span id="v3-cost-val" class="text-emerald-400 font-bold">$10 USD / hr</span>
+                  </div>
+                  <input id="v3-cost-range" type="range" min="5" max="40" value="10" step="1" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
+                </div>
+              </div>
+
+              <div class="lg:col-span-5 p-6 rounded-2xl bg-[#0B0D12] border border-emerald-500/20 flex flex-col justify-between">
+                <div>
+                  <span class="text-xs text-gray-400 block">Tiempo quemado al mes:</span>
+                  <div class="text-3xl font-extrabold text-white mt-1"><span id="v3-lost">250</span> hs</div>
+
+                  <div class="mt-4 pt-4 border-t border-gray-800">
+                    <span class="text-xs text-emerald-400 font-semibold block">Horas recuperables estimadas:</span>
+                    <div class="text-4xl font-extrabold text-emerald-400 mt-1"><span id="v3-rec">175</span> hs/mes</div>
+                    <p class="text-xs text-gray-400 mt-1 font-light">Ahorro anual: <strong id="v3-ann" class="text-white">$21.000 USD</strong></p>
+                  </div>
+                </div>
+
+                <a
+                  id="v3-wa"
+                  href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Hicimos%20la%20simulaci%C3%B3n%20en%20Estudio%20Quatra%20para%20un%20equipo%20de%205%20personas%20y%20nos%20da%20175%20hs%20recuperables.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full mt-6 py-3.5 text-center text-xs font-bold rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-lg shadow-emerald-600/20"
+                >
+                  Recuperar estas horas
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Final Boutique -->
+      <section class="py-24 text-center">
+        <div class="max-w-2xl mx-auto px-4">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">¿Nos tomamos un café en tu depósito?</h2>
+          <p class="mt-4 text-gray-400 text-base leading-relaxed">
+            Sin presentaciones en PowerPoint ni contratos obligatorios. Venimos 2 horas, vemos el flujo real y te decimos con honestidad qué se puede resolver.
+          </p>
+          <div class="mt-8">
+            <a
+              href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Nos%20gustar%C3%ADa%20agendar%20la%20visita%20de%202%20horas%20en%20nuestro%20dep%C3%B3sito.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-xl transition-all"
+            >
+              Escribir a los hermanos por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</Layout>
+
+<script>
+  import { siteConfig } from '../data/siteConfig';
+
+  function initV3() {
+    const emp = document.getElementById('v3-emp-range') as HTMLInputElement | null;
+    const hours = document.getElementById('v3-hours-range') as HTMLInputElement | null;
+    const cost = document.getElementById('v3-cost-range') as HTMLInputElement | null;
+
+    const empVal = document.getElementById('v3-emp-val');
+    const hoursVal = document.getElementById('v3-hours-val');
+    const costVal = document.getElementById('v3-cost-val');
+
+    const lostEl = document.getElementById('v3-lost');
+    const recEl = document.getElementById('v3-rec');
+    const annEl = document.getElementById('v3-ann');
+    const wa = document.getElementById('v3-wa') as HTMLAnchorElement | null;
+
+    if (!emp || !hours || !cost) return;
+
+    function calc() {
+      const e = parseInt(emp.value, 10);
+      const h = parseFloat(hours.value);
+      const c = parseFloat(cost.value);
+
+      const lost = Math.round(e * h * 20);
+      const rec = Math.round(lost * 0.70);
+      const ann = Math.round(rec * c * 12);
+
+      if (empVal) empVal.textContent = `${e} personas`;
+      if (hoursVal) hoursVal.textContent = `${h} hs/día`;
+      if (costVal) costVal.textContent = `$${c} USD / hr`;
+
+      if (lostEl) lostEl.textContent = lost.toString();
+      if (recEl) recEl.textContent = rec.toString();
+      if (annEl) annEl.textContent = `$${ann.toLocaleString('es-AR')} USD`;
+
+      if (wa) {
+        const msg = encodeURIComponent(`Hola! Simulamos un cálculo en Estudio Quatra para ${e} personas y nos da ${rec} hs recuperables/mes.`);
+        wa.href = `https://wa.me/${siteConfig.contactWhatsApp}?text=${msg}`;
+      }
+    }
+
+    emp.addEventListener('input', calc);
+    hours.addEventListener('input', calc);
+    cost.addEventListener('input', calc);
+    calc();
+  }
+
+  document.addEventListener('DOMContentLoaded', initV3);
+  initV3();
+</script>

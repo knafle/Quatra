@@ -1,0 +1,98 @@
+---
+import { siteConfig } from '../data/siteConfig';
+
+const solutions = [
+  {
+    badge: "Despacho & Rutas",
+    title: "Automatizador de Hojas de Ruta y Remitos",
+    before: "2 horas diarias copiando pedidos de planillas a mano y formateando PDFs para cada chofer.",
+    after: "Cargas el listado de pedidos y en 20 segundos se generan todas las hojas de ruta ordenadas por zona.",
+    saving: "Ahorro: ~40 horas-hombre al mes",
+    iconColor: "text-blue-400 bg-blue-950/60 border-blue-800/60"
+  },
+  {
+    badge: "Control de Depósito",
+    title: "Mini-WMS Móvil para Celular y Escáner",
+    before: "Anotaciones en papel en el muelle de carga que luego alguien debe tipear al Excel al final del día.",
+    after: "App web ultra liviana para escanear con la cámara del celular o pistola Bluetooth. Stock al instante.",
+    saving: "Ahorro: ~50 horas-hombre al mes",
+    iconColor: "text-amber-400 bg-amber-950/60 border-amber-800/60"
+  },
+  {
+    badge: "Comunicación & Tracking",
+    title: "Bot de Avisos Automáticos por WhatsApp",
+    before: "Despachantes saturados respondiendo llamadas de clientes preguntando '¿cuándo llega mi carga?'.",
+    after: "Notificaciones automáticas a clientes y choferes vía WhatsApp con link de seguimiento en tiempo real.",
+    saving: "Ahorro: ~35 horas-hombre al mes",
+    iconColor: "text-emerald-400 bg-emerald-950/60 border-emerald-800/60"
+  },
+  {
+    badge: "Integración de Sistemas",
+    title: "Conector Satélite de Facturación y Stock",
+    before: "Cargar la venta en el e-commerce, luego en el ERP contable y después restar el stock en otra planilla.",
+    after: "Conexión transparente en segundo plano que sincroniza pedidos, facturación y stock sin tocar una tecla.",
+    saving: "Ahorro: Cero errores de stock fantasma",
+    iconColor: "text-cyan-400 bg-cyan-950/60 border-cyan-800/60"
+  }
+];
+---
+
+<section id="soluciones" class="py-20 md:py-28 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        Soluciones Típicas
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Herramientas reales para problemas que vivís todos los días
+      </h2>
+      <p class="mt-4 text-gray-300 text-base sm:text-lg">
+        No inventamos la rueda. Identificamos las tareas que le roban el tiempo a tu gente y las convertimos en procesos de 1 clic.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {solutions.map((item) => (
+        <div class="rounded-2xl p-7 bg-gray-900/60 border border-gray-800 hover:border-gray-700 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class={`text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md border ${item.iconColor}`}>
+                {item.badge}
+              </span>
+              <span class="text-xs font-semibold text-emerald-400 bg-emerald-950/40 border border-emerald-800/40 px-2.5 py-1 rounded-full">
+                {item.saving}
+              </span>
+            </div>
+            
+            <h3 class="text-xl font-bold text-white mb-4">{item.title}</h3>
+
+            <div class="space-y-3 text-sm">
+              <div class="p-3.5 rounded-xl bg-red-950/20 border border-red-900/30">
+                <span class="text-red-400 font-bold block text-xs uppercase mb-1">Antes (El problema):</span>
+                <p class="text-gray-300 text-xs leading-relaxed">{item.before}</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-emerald-950/20 border border-emerald-900/30">
+                <span class="text-emerald-400 font-bold block text-xs uppercase mb-1">Con nuestra tool a medida:</span>
+                <p class="text-gray-200 text-xs leading-relaxed">{item.after}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-800 flex items-center justify-between">
+            <span class="text-xs text-gray-400">Desarrollo e implementación en ~10 días</span>
+            <a
+              href={`https://wa.me/${siteConfig.contactWhatsApp}?text=Hola!%20Me%20interes%C3%B3%20la%20soluci%C3%B3n%20de%20"${encodeURIComponent(item.title)}".%20%C2%BFC%C3%B3mo%20la%20podr%C3%ADamos%20aplicar%20en%20nuestra%20empresa?`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1 group"
+            >
+              Consultar por esta tool
+              <span class="group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
