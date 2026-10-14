@@ -34,9 +34,12 @@ export const siteConfig: SiteConfig = {
   ]
 };
 
-// Helper for GitHub Pages subpath compatibility
-export function asset(p: string): string {
-  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-  const clean = p.startsWith('/') ? p : `/${p}`;
-  return `${base}${clean}`;
+// URL helper with trailing slash guaranteed
+export const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL 
+  : `${import.meta.env.BASE_URL}/`;
+
+export function url(path: string = ''): string {
+  const clean = path.replace(/^\//, '');
+  return `${baseUrl}${clean}`;
 }
