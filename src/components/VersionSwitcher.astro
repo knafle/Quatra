@@ -4,18 +4,19 @@ interface Props {
 }
 
 const { currentVersion } = Astro.props;
+const b = import.meta.env.BASE_URL;
 
 const versions = [
-  { id: "1", path: "/1", name: "v1: Minimal Noir", badge: "Screenshot Style", desc: "Monocromo puro, alta gama, estilo Linear/Apple" },
-  { id: "2", path: "/2", name: "v2: Industrial Tech", badge: "Operaciones", desc: "Detalles ámbar de seguridad, cuadrícula de muelle" },
-  { id: "3", path: "/3", name: "v3: Boutique Studio", badge: "Los Hermanos", desc: "Editorial, cercanía humana y acentos esmeralda" }
+  { id: "1", path: `${b}1`, name: "v1: Minimal Noir", badge: "Screenshot Style", desc: "Monocromo puro, alta gama, estilo Linear/Apple" },
+  { id: "2", path: `${b}2`, name: "v2: Industrial Tech", badge: "Operaciones", desc: "Detalles ámbar de seguridad, cuadrícula de muelle" },
+  { id: "3", path: `${b}3`, name: "v3: Boutique Studio", badge: "Los Hermanos", desc: "Editorial, cercanía humana y acentos esmeralda" }
 ];
 ---
 
 <div class="fixed top-4 left-1/2 -translate-x-1/2 z-50">
   <div class="flex items-center gap-1.5 p-1.5 rounded-full bg-neutral-900/90 border border-neutral-700/80 shadow-2xl backdrop-blur-xl">
     <div class="flex items-center gap-2 pl-3 pr-2 py-1 text-[11px] font-mono uppercase tracking-wider text-neutral-400 border-r border-neutral-700/60 hidden sm:flex">
-      <img src="/quatra-badge-hd.png" alt="" class="w-4 h-4 rounded-sm" />
+      <img src={`${b}quatra-badge-hd.png`} alt="" class="w-4 h-4 rounded-sm" />
       <span>Probar Versión:</span>
     </div>
 

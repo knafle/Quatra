@@ -1,4 +1,5 @@
 ---
+const b = import.meta.env.BASE_URL;
 import Layout from '../layouts/Layout.astro';
 import VersionSwitcher from '../components/VersionSwitcher.astro';
 import { siteConfig } from '../data/siteConfig';
@@ -57,8 +58,8 @@ const faqs = [
     <!-- Header Minimal -->
     <header class="border-b border-neutral-900 bg-black/80 backdrop-blur-md sticky top-0 z-40 pt-10 sm:pt-14 pb-4">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-        <a href="/1" class="flex items-center gap-3.5 group">
-          <img src="/quatra-badge-hd.png" alt="Quatra Logo" class="w-10 h-10 rounded-xl shadow-lg group-hover:scale-105 transition-transform" />
+        <a href={`${b}1`} class="flex items-center gap-3.5 group">
+          <img src={`${b}quatra-badge-hd.png`} alt="Quatra Logo" class="w-10 h-10 rounded-xl shadow-lg group-hover:scale-105 transition-transform" />
           <div class="flex items-baseline gap-2">
             <span class="text-xl font-bold tracking-tight text-white">Quatra</span>
             <span class="text-xs text-neutral-500 font-mono hidden sm:inline">/ operaciones & software</span>
@@ -89,13 +90,13 @@ const faqs = [
       <section class="pt-16 pb-24 md:pt-28 md:pb-36 border-b border-neutral-900 relative overflow-hidden">
         <!-- Center Watermark of the Knot -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] opacity-[0.03] pointer-events-none">
-          <img src="/quatra-symbol-white.png" alt="" class="w-full h-full object-contain animate-spin" style="animation-duration: 200s;" />
+          <img src={`${b}quatra-symbol-white.png`} alt="" class="w-full h-full object-contain animate-spin" style="animation-duration: 200s;" />
         </div>
 
         <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <!-- Screenshot Card Showcase -->
           <div class="inline-flex items-center gap-3.5 p-2 pr-5 rounded-2xl bg-neutral-900/80 border border-neutral-800 mb-10 shadow-2xl">
-            <img src="/quatra-badge-hd.png" alt="Quatra Logo" class="w-9 h-9 rounded-lg" />
+            <img src={`${b}quatra-badge-hd.png`} alt="Quatra Logo" class="w-9 h-9 rounded-lg" />
             <div class="text-left">
               <span class="text-xs font-bold text-white block">Quatra</span>
               <span class="text-[11px] text-neutral-400 block -mt-0.5">Software que calza con tu operación, no al revés.</span>
@@ -292,7 +293,7 @@ const faqs = [
       <!-- Nosotros (Los 4 Hermanos) -->
       <section id="nosotros" class="py-24 border-b border-neutral-900">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <img src="/quatra-badge-hd.png" alt="Quatra" class="w-16 h-16 rounded-2xl mx-auto mb-6 shadow-2xl" />
+          <img src={`${b}quatra-badge-hd.png`} alt="Quatra" class="w-16 h-16 rounded-2xl mx-auto mb-6 shadow-2xl" />
           <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
             Ingeniería directa con los creadores
           </h2>
@@ -329,7 +330,7 @@ const faqs = [
     <footer class="py-12 border-t border-neutral-900 text-xs text-neutral-500 font-mono">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div class="flex items-center gap-2">
-          <img src="/quatra-badge-hd.png" alt="" class="w-4 h-4 rounded-sm" />
+          <img src={`${b}quatra-badge-hd.png`} alt="" class="w-4 h-4 rounded-sm" />
           <span>© {new Date().getFullYear()} Quatra. Minimal Noir Edition.</span>
         </div>
         <span>Buenos Aires, Argentina // Presencial & Remoto</span>

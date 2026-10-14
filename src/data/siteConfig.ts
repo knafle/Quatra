@@ -33,3 +33,10 @@ export const siteConfig: SiteConfig = {
     { number: "04", title: "Medición de Horas-Hombre", desc: "Acompañamos a tu personal en el piso y garantizamos el ahorro medible de tiempo desde la semana 1." }
   ]
 };
+
+// Helper for GitHub Pages subpath compatibility
+export function asset(p: string): string {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  const clean = p.startsWith('/') ? p : `/${p}`;
+  return `${base}${clean}`;
+}
